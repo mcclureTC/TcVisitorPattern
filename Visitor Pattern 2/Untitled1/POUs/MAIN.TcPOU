@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
   <POU Name="MAIN" Id="{6025bfdc-a380-4b28-aa87-0ba2f0ad2d17}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
@@ -17,6 +17,8 @@ END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[Module_One.Name := 'Module One';
 Module_Two.Name := 'Module Two';
+
+//
 IF writeToLog THEN
 	writeToLog := FALSE;
 	Module_One.Accept(Visitor := LogName);
@@ -25,12 +27,17 @@ END_IF
 
 Module_One.CyclicLogic();
 Module_Two.CyclicLogic();
+
+//
 IF Module_One.CounterValue = 10 THEN
 	Module_Two.Accept(Visitor := LogCounterValue);
 END_IF]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="114" Count="11" />
+      <LineId Id="140" Count="1" />
+      <LineId Id="155" Count="0" />
+      <LineId Id="154" Count="0" />
+      <LineId Id="142" Count="11" />
       <LineId Id="74" Count="0" />
     </LineIds>
   </POU>
