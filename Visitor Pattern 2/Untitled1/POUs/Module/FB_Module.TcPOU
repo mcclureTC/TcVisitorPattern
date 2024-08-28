@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_Module" Id="{ca542684-4b12-4224-9ba1-d68d2d2ffb0e}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Module IMPLEMENTS I_Module
+VAR
+	_Name : STRING;
+	_Counter : udint;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Accept" Id="{ca1dc568-b4a3-47c4-9915-d3f8064fc7cd}">
+      <Declaration><![CDATA[METHOD Accept
+VAR_INPUT
+	Visitor : I_VisitModules;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Visitor.VisitModules(THIS^);]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="CounterValue" Id="{b72f4e84-6612-43a1-ad6e-1f3f1569d818}">
+      <Declaration><![CDATA[PROPERTY CounterValue : UDINT
+]]></Declaration>
+      <Get Name="Get" Id="{d789c8e5-6e1e-41ce-a805-d9e0bb3de30c}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[CounterValue := _Counter;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{b280cacd-96d8-43fa-876d-495a7a54746d}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_Counter := CounterValue;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="CyclicLogic" Id="{2d04fa79-ae4b-468c-8baf-4222da60883a}">
+      <Declaration><![CDATA[METHOD CyclicLogic : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[_Counter := _Counter + 1;]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Name" Id="{715e9e0a-8e94-4ff2-beb7-2532b213fcef}">
+      <Declaration><![CDATA[PROPERTY Name : STRING
+]]></Declaration>
+      <Get Name="Get" Id="{0374513d-08bc-4510-8872-f906a2e8a2c0}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Name := _Name;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{8282942d-e9c6-468b-a4b0-b68911f35941}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_Name := NAme;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <LineIds Name="FB_Module">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Module.Accept">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Module.CounterValue.Get">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Module.CounterValue.Set">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Module.CyclicLogic">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Module.Name.Get">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Module.Name.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

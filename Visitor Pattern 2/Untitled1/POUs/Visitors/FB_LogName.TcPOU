@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_LogName" Id="{1b47ed67-7d23-44be-b576-8de094e1ade3}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_LogName IMPLEMENTS I_VisitModules
+VAR
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="VisitModules" Id="{82750c65-5245-4f4f-ae88-a050f7f34916}">
+      <Declaration><![CDATA[METHOD VisitModules
+VAR_INPUT
+	Module	: I_Module;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ADSLOGSTR(ADSLOG_MSGTYPE_HINT OR ADSLOG_MSGTYPE_LOG, 'The Module Name is: %s', Module.Name);
+]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_LogName">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_LogName.VisitModules">
+      <LineId Id="7" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

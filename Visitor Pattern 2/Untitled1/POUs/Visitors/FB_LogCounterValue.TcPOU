@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_LogCounterValue" Id="{f760fbc9-0e16-4a7b-bf35-36e8de23677b}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_LogCounterValue IMPLEMENTS I_VisitModules
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="VisitModules" Id="{af05c526-8211-4af5-8a6a-99c1cbfc2c78}">
+      <Declaration><![CDATA[METHOD VisitModules
+VAR_INPUT
+	Module	: I_Module;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ADSLOGDINT(ADSLOG_MSGTYPE_HINT OR ADSLOG_MSGTYPE_LOG, 'The Module Counter is: %d', Module.CounterValue);]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_LogCounterValue">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_LogCounterValue.VisitModules">
+      <LineId Id="8" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

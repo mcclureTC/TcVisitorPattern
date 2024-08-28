@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="I_Module" Id="{91653e4b-0188-4506-8840-372d087b90a0}">
+    <Declaration><![CDATA[INTERFACE I_Module
+]]></Declaration>
+    <Property Name="CounterValue" Id="{f7008d8b-f6fe-4e2a-b628-ea2056f9ebaa}">
+      <Declaration><![CDATA[PROPERTY CounterValue : UDINT]]></Declaration>
+      <Get Name="Get" Id="{c4d711bc-425d-41ca-9532-a20b62b56ac1}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{a74ac352-d0d4-46b6-8359-dabcf343263f}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="Name" Id="{1be9bb8a-c3b9-4c86-834e-b60e58cd4413}">
+      <Declaration><![CDATA[PROPERTY Name : string]]></Declaration>
+      <Get Name="Get" Id="{338cfc02-1fa5-4170-ba28-2604f43889d2}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{aeb43d23-76e8-4736-bf4f-982c5b0b8687}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+  </Itf>
+</TcPlcObject>
